@@ -1,0 +1,30 @@
+<h5 class="card-title">Ajouter un eleve</h5>
+<form (ngSubmit)="modifierEleve()">
+    <div class="form-group">
+        <label for="nom">Nom</label>
+        <input name="nom" type="text" [(ngModel)]=eleve.nom class="form-control" placeholder="nom">
+    </div>
+
+    <div class="form-group">
+        <label for="prenom">Prenom</label>
+        <input name="prenom" type="text" [(ngModel)]=eleve.prenom class="form-control" placeholder="prenom">
+    </div>
+    <div class="form-group">
+        <label for="date">Date de naissance</label>
+        <input name="dateNaissance" class="form-control" [(ngModel)]=eleve.dateNaissance type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31">
+    </div>
+    <div class="form-group">
+        <label for="choix_tuteur">Tuteur</label>
+        <input name="tuteur" list="tuteur" [(ngModel)]=eleve.tuteur.id type="text" id="choix_tuteur">
+        <datalist id="tuteur">
+            <option *ngFor="let tuteur of tuteurs" value={{tuteur.id}}  id="{{tuteur.id}}">{{tuteur.nom}} {{tuteur.prenom}}</option>
+        </datalist>
+        <span class="input-group-btn">
+            <button [routerLink]="['/centre/tuteur/ajouter']" class="btn btn-default" type="button">
+                <td><img src="../../../../assets/img/more.svg" alt="editer" height="22px" width="25px" /></td>
+            </button>
+        </span>
+    </div>
+
+    <button type="submit" name="" id="" class="mt-1 btn btn-primary">Modifier</button>
+</form>

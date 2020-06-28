@@ -1,0 +1,17 @@
+<div class=" col-sm-6 ">
+    <div class="card ">
+        <div class="card-header "><strong>Formulaire</strong> <small class="ml-3 ">Métier</small></div>
+        <form (ngSubmit)="putMetier() ">
+            <div class="card-body ">
+                <div class=" form-group ">
+                    <label for="label">Label</label>
+                    <input class="form-control " required name="label" [(ngModel)]=metier.label id="company" type="text" placeholder="Nouveau label" />
+                </div>
+            </div>
+
+            <div class="card-footer ">
+                <button class="btn btn-sm btn-primary " type="submit ">Modifier</button>
+            </div>
+        </form>
+    </div>
+</div>

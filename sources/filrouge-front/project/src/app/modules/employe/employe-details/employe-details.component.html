@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+            <div class="well profile">
+                <div class="col-sm-12">
+                    <div class="col-xs-12 col-sm-8">
+                        <h2>{{employe.nom}} {{employe.prenom}}</h2>
+                        <p><strong>Date de naissance : </strong>{{employe.dateNaissance}}</p>
+                        <p><strong>Adresse: </strong>{{ employe.adress.rue }} {{ employe.adress.ville }} {{ employe.adress.codePostal }} {{ employe.adress.pays }}</p>
+                        <p><strong>Email: </strong>{{ employe.email }}</p>
+                        <p><strong>Téléphone: </strong>{{ employe.numTel }}</p>
+                        <p><strong>Métier: </strong>{{ employe.metier.label }}</p>
+                    </div>
+
+                </div>
+                <div class="col-xs-12 divider text-center">
+                    <div class="col-xs-12 col-sm-4 emphasis">
+                        <button [routerLink]="['/centre/employe/modifier', employe.id]" class="btn btn-info btn-block"><span class="fa fa-user"></span> Modifier </button>
+                        <button (click)="suppr(employe.id)" class="btn btn-info btn-block"><span class="fa fa-user"></span> Supprimer </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

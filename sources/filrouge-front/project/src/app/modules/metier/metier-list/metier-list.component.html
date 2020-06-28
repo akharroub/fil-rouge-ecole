@@ -1,0 +1,60 @@
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<link href="../assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+<link href="../assets/demo/demo.css" rel="stylesheet" />
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header card-header-primary">
+<!-- <<<<<<< HEAD
+            <h4 class="card-title ">Liste des métiers</h4>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class="text-primary">
+                        <tr>
+                            <th>Id</th>
+                            <th>Label</th>
+                            <th>info</th>
+                            <th>Editer</th>
+                            <th>Supprimer</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let metier of metiers">
+                        <tr class="text-primary">
+                            <th scope="row">{{metier.id}}</th>
+                            <td>{{metier.label}}</td>
+                            <td (click)="affiche(metier.id)"><img src="../../../../assets/img/more.svg" alt="editer" height="22px" width="25px" /></td>
+                            <td [routerLink]="['/centre/metier/modifier', metier.id]"><img src="../../../../assets/img/edit-interface-symbol.svg" alt="editer" height="22px" width="25px" /></td>
+                            <td (click)="suppr(metier.id)"><img src="../../../../assets/img/rubbish-bin.svg" alt="supprimer" height="22px" width="25px" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+======= -->
+            <h4 class="card-title ">Liste des metier</h4>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+<table class="table">
+    <thead class="table">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">LABEL</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let metier of metiers">
+        <tr>
+            <th scope="row">{{metier.id}}</th>
+            <td>{{metier.label}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- >>>>>>> red -->
+</div>

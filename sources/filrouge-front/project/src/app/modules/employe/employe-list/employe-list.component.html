@@ -1,0 +1,41 @@
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<link href="../assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+<link href="../assets/demo/demo.css" rel="stylesheet" />
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header card-header-primary">
+            <h4 class="card-title ">Liste des employés</h4>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class="table">
+                        <tr>
+                            <th>Id</th>
+                            <th>Nom</th>
+                            <th>Prenom</th>
+                            <th>info</th>
+                            <th style="display:none;">Editer</th>
+                            <th>Supprimer</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let employe of employes">
+                        <tr class="text-primary">
+                            <th scope="row">{{employe.id}}</th>
+                            <td>{{employe.nom}}</td>
+                            <td>{{employe.prenom}}</td>
+                            <td (click)="affiche(employe.id)"><img src="../../../../assets/img/more.svg" alt="editer" height="22px" width="25px" /></td>
+                            <td style="display:none;" [routerLink]="['/centre/employe/modifier', employe.id]"><img src="../../../../assets/img/edit-interface-symbol.svg" alt="editer" height="22px" width="25px" /></td>
+                            <td (click)="suppr(employe.id)"><img src="../../../../assets/img/rubbish-bin.svg" alt="supprimer" height="22px" width="25px" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div>
+                    <a class="nav-link" (click)="retour()" routerLinkActive="router-link-active"><i class="material-icons">arrow_back</i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

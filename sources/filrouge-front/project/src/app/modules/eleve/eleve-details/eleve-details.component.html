@@ -1,0 +1,62 @@
+<h1>Fiche eleve</h1>
+
+<p>nom : {{eleve.nom}}</p>
+<p>prenom : {{eleve.prenom}}</p>
+<p>date de naissance : {{eleve.dateNaissance}}</p>
+<span>
+    <button [routerLink]="['/centre/eleve/modifier', eleve.id]" type="button" name="" id="" class="btn btn-primary">modifier</button>
+    <button (click)="suppr(eleve.id)" type="button" name="" id="" class="btn btn-primary">supprimer</button>
+</span>
+
+
+<div class="container py-4 my-2">
+    <div class="row">
+        <div class="tab-content py-4" id="myTabContent">
+            <div class="tab-pane py-3 fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                <strong class="h3 d-block text-secondary font-weight-bold mb-1">Responsable Légale</strong>
+                <hr>
+                <strong [routerLink]="['/centre/tuteur', eleve.tuteur.id]" class="h4 d-block text-secondary font-weight-bold mb-1">{{eleve.tuteur.nom}} {{eleve.tuteur.prenom}}</strong>
+                <dl class="row mt-4 mb-4 pb-3">
+                    <dt class="col-sm-3">Telephone</dt>
+                    <dd class="col-sm-9">{{ eleve.tuteur.numTel }}</dd>
+
+                    <dt class="col-sm-3">Adresse</dt>
+                    <dd class="col-sm-9">
+                        <address class="mb-0">
+                                    {{ eleve.tuteur.adress.rue }} {{ eleve.tuteur.adress.ville }}  {{ eleve.tuteur.adress.codePostal }}  {{ eleve.tuteur.adress.pays }} 
+                                </address>
+                    </dd>
+
+                    <dt class="col-sm-3">Email address</dt>
+                    <dd class="col-sm-9">
+                        <p>{{ eleve.tuteur.email }} </p>
+                    </dd>
+                </dl>
+
+            </div>
+            <div class="tab-pane py-3 fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card card-stats">
+                        <div class="card-header card-header-warning card-header-icon">
+                            <div class="card-icon">
+                                <i class="material-icons">supervisor_account</i>
+                            </div>
+                            <p class="card-category">Eleve</p>
+                            <h3 class="card-title">
+                                <small>Total:</small> {{ nbrCours }}
+                            </h3>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                <i class="material-icons text-danger">list</i>
+                                <a class="nav-link" [routerLink]="['cours', eleve.id]" routerLinkActive="router-link-active">Liste des cours</a>
+                            </div>
+                            <a [routerLink]="['/centre/cours/liste']" routerLinkActive="router-link-active" class="badge badge-primary">Ajouter un cours</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <router-outlet></router-outlet>

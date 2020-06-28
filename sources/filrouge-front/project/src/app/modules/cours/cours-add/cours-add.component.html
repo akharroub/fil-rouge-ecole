@@ -1,0 +1,18 @@
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<link href="../assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+<link href="../assets/demo/demo.css" rel="stylesheet" />
+<form  (ngSubmit)="ajoutCours()">
+    <div class="form-group">
+        <label for="leLabel"></label>
+        <input type="text" name="label" class="form-control" id="leLabel" [(ngModel)]=monCours.label
+            placeholder="Entrer le label">
+            <label for="prix"></label>
+            <input type="text" name="prix" class="form-control" id="prix" [(ngModel)]=monCours.prix
+            placeholder="Entrer le prix">
+            <select id="test"[(ngModel)]=idmat name="matiere">
+                <option [ngValue]="matiere.id" *ngFor="let matiere of LesMatieres" >{{matiere.label}}</option>
+            </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

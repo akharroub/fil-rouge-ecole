@@ -1,0 +1,9 @@
+#ajoutClasseCard{
+    background-color: blueviolet;
+    height: 10rem;
+    width: 20rem;
+}
+
+.card{
+    border: solid 1px black;
+}

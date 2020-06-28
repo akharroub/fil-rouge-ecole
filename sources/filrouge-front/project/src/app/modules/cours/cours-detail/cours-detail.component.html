@@ -1,0 +1,36 @@
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<link href="../assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+<link href="../assets/demo/demo.css" rel="stylesheet" />
+
+<div class="card" style="width: 18rem;">
+  <i class="material-icons text-danger mx-auto mt-2">account_circle</i>
+  <div class="card-body">
+    <h5 class="card-title">Cours eleve liste :</h5>
+    <div *ngIf= "ListeEleve.length === 0">
+      <p>Nombre d'eleve dans cette liste : {{ListeEleve.length}}</p>
+    </div>
+      <div *ngFor="let eleve of ListeEleve">
+        <p>id : {{eleve.id}}</p>
+        <p>nom : {{eleve.nom}}</p>
+        <p>prenom : {{eleve.prenom}}</p>
+         <td (click)="sup(eleve.id)"><img src="/assets/img/rubbish-bin.svg" alt="supprimer" height="22px" width="25px" /></td>
+        <hr>
+      </div>
+  </div>
+</div>
+
+<div class="mt-5">
+
+<div  class="row justify-content-between">
+  <div>
+    <h6 class="my-3">ajouter des eleve dans ce cours</h6>
+    <button (click)="addElvsCours()" class="btn btn-primary" type="submit">ajouter</button>
+  </div>
+
+  <div class="my-auto">
+    <a class="nav-link" (click)="retour()" routerLinkActive="router-link-active"><i class="material-icons">arrow_back</i></a>
+  </div>
+</div>
+  
+</div>

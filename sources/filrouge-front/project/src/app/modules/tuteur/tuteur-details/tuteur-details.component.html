@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+            <div class="well profile">
+                <div class="col-sm-12">
+                    <div class="col-xs-12 col-sm-8">
+                        <h2>{{tuteur.nom}} {{tuteur.prenom}}</h2>
+                        <p><strong>Date de naissance : </strong>{{ tuteur.dateNaissance }}</p>
+                        <p><strong>Adresse: </strong>{{ tuteur.adress.rue }} {{ tuteur.adress.ville }} {{ tuteur.adress.codePostal }} {{ tuteur.adress.pays }}</p>
+                        <p><strong>Email: </strong>{{ tuteur.email }}</p>
+                        <p><strong>Telephone: </strong>{{ tuteur.numTel }}</p>
+                        <p><strong>Enfant: </strong></p>
+                        <ul class="list-group" *ngFor="let eleve of tuteur.eleve">
+                            <div class="list-group">
+                                <a [routerLink]="['/centre/eleve', eleve.id]" class="">
+                                    <li class="list-group-item">{{eleve.nom}} {{eleve.prenom}}</li>
+                                </a>
+                            </div>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col-xs-12 divider text-center">
+                    <div class="col-xs-12 col-sm-4 emphasis">
+                        <button [routerLink]="['/centre/tuteur/modifier', tuteur.id]" class="btn btn-info btn-block"><span class="fa fa-user"></span> Modifier </button>
+                        <button (click)="deleteTuteur(tuteur.id)" class="btn btn-info btn-block"><span class="fa fa-user"></span> Supprimer </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

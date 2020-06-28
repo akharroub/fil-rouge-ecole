@@ -1,0 +1,63 @@
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<link href="../assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+<link href="../assets/demo/demo.css" rel="stylesheet" />
+
+
+<div class=" col-sm-6 ">
+    <div class="card ">
+        <div class="card-header "><strong>Formulaire</strong> <small class="ml-3 ">Tuteur</small></div>
+        <form (ngSubmit)="ajoutTuteur() ">
+            <div class="card-body ">
+                <div class=" form-group ">
+                    <label for="nom "></label>
+                    <input class="form-control " required name="nom " [(ngModel)]=tuteur.nom id="company " type="text " placeholder="nom ">
+                </div>
+                <div class="form-group ">
+                    <label for="prenomm "></label>
+                    <input class="form-control " required name="prenom " [(ngModel)]=tuteur.prenom id="prenom " type="text " placeholder="prenom ">
+                </div>
+                <div class="form-group ">
+                    <label for="date">Date de naissance</label>
+                    <input name="dateNaissance " required class="form-control " [(ngModel)]=tuteur.dateNaissance type="date " id="start " name="trip-start " value="2018-07-22 " min="1920-01-01 " max="2002-12-31 ">
+                </div>
+                <div class="form-group ">
+                    <label for="rue "></label>
+                    <input class="form-control " id="adress " required [(ngModel)]=tuteur.adress.rue name="rue " type="text " placeholder="adresse ">
+                </div>
+                <div class="row ">
+                    <div class="form-group col-sm-8 ">
+                        <label for="ville "></label>
+                        <input class="form-control " required name="ville " [(ngModel)]=tuteur.adress.ville id="ville " type="text " placeholder="ville ">
+                    </div>
+                    <div class="form-group col-sm-4 ">
+                        <label for="codePost "></label>
+                        <input class="form-control " name="codePostal " [(ngModel)]=tuteur.adress.codePostale id="codePostal " type="text " placeholder="code postal " required>
+                    </div>
+                </div>
+
+                <div class="form-group ">
+                    <label for="pays "></label>
+                    <input class="form-control " required name="pays " [(ngModel)]=tuteur.adress.pays id="pays " type="text " placeholder="Pays " value="France ">
+                </div>
+            </div>
+
+            <div class="card-footer ">
+                <button class="btn btn-sm btn-primary " type="submit ">Ajouter</button>
+                <button class="btn btn-sm btn-danger ml-3 " (click)="clear()" type="reset "> Reinitialiser</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../assets/js/core/jquery.min.js"></script>
+<script src="../assets/js/core/popper.min.js"></script>
+<script src="../assets/js/core/bootstrap-material-design.min.js"></script>
+<script src="https://unpkg.com/default-passive-events"></script>
+<script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<script src="../assets/js/plugins/chartist.min.js"></script>
+<script src="../assets/js/plugins/bootstrap-notify.js"></script>
+<script src="../assets/js/material-dashboard.js?v=2.1.0"></script>
+<script src="../assets/demo/demo.js"></script>
+<script src="../assets/js/sb-admin-2.min.js"></script>

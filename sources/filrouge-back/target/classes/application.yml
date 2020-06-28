@@ -1,0 +1,22 @@
+logging:
+  level:
+    org:
+      springframework:
+        web: INFO
+token:
+  secret: bF7449XF5lc5iz5sW5Y5suX4d7ok4P7j
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/filrouge
+    username: postgres
+    password: red
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+
+    

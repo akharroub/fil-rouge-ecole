@@ -1,0 +1,15 @@
+<form (ngSubmit)="updateC()">
+    <div class="form-group">
+        <label for="leLabel">Emtrer le label du cours ici</label>
+        <input type="text" name="label" class="form-control" id="leLabel" [(ngModel)]=upCours.label
+            placeholder="Entrer le label">
+        <label for="prix">Emtrer le prix du cours ici</label>
+        <input type="text" name="prix" class="form-control" id="prix" [(ngModel)]=upCours.prix
+            placeholder="Entrer le prix">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+    <div class="row justify-content-center">
+        <a class="nav-link" (click)="retour()" routerLinkActive="router-link-active"><i class="material-icons">arrow_back</i>retour</a>
+      </div>

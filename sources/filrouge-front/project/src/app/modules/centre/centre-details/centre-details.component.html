@@ -1,0 +1,161 @@
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<link href="../assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+<link href="../assets/demo/demo.css" rel="stylesheet" />
+<div class="row">
+
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header card-header-warning card-header-icon">
+                <div class="card-icon">
+                    <i class="material-icons">perm_identity</i>
+                </div>
+                <p class="card-category">Eleve</p>
+                <h3 class="card-title">{{ nbrEleve }}
+                    <small *ngIf="nbrEleve > 1">eleves</small>
+                    <small *ngIf="nbrEleve <= 1">eleve</small>
+                </h3>
+            </div>
+            <div class="card-footer">
+                <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                    <i class="material-icons text-warning align-middle mr-3">list</i>
+                    <a [routerLink]="['eleve/liste']" routerLinkActive="router-link-active" class="text-secondary align-middle">Liste des élèves</a>
+                </div>
+                <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                    <i class="material-icons text-warning align-middle mr-3">person_add</i>
+                    <a [routerLink]="['eleve/ajouter']" routerLinkActive="router-link-active" class="text-secondary align-middle">Ajouter un élève</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header card-header-success card-header-icon">
+                <div class="card-icon">
+                    <i class="material-icons">supervisor_account</i>
+                </div>
+                <p class="card-category">Tuteur</p>
+                <h3 class="card-title">{{ nbrTuteur }}
+                    <small *ngIf="nbrTuteur > 1">tuteurs</small>
+                    <small *ngIf="nbrTuteur <= 1">tuteur</small>
+                </h3>
+
+            </div>
+            <div class="card-footer">
+                <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                    <i class="material-icons text-warning align-middle mr-3">list</i>
+                    <a [routerLink]="['tuteur/liste']" routerLinkActive="router-link-active" class="text-secondary align-middle">Liste des tuteurs</a>
+                </div>
+                <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                    <i class="material-icons text-warning align-middle mr-3">person_add</i>
+                    <a [routerLink]="['tuteur/ajouter']" routerLinkActive="router-link-active" class="text-secondary align-middle">Ajouter un tuteur</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header card-header-danger card-header-icon">
+                <div class="card-icon">
+                    <i class="material-icons">work</i>
+                </div>
+                <p class="card-category">Employer</p>
+                <h3 class="card-title">{{ nbrEmployer }}
+                    <small *ngIf="nbrEmployer > 1">employés</small>
+                    <small *ngIf="nbrEmployer <= 1">employé</small>
+                </h3>
+            </div>
+            <div class="card-footer">
+                <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                    <i class="material-icons text-warning align-middle mr-3">list</i>
+                    <a [routerLink]="['employe/liste']" routerLinkActive="router-link-active" class="text-secondary align-middle">Liste des employés</a>
+                </div>
+                <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                    <i class="material-icons text-warning align-middle mr-3">person_add</i>
+                    <a [routerLink]="['employe/ajouter']" routerLinkActive="router-link-active" class="text-secondary align-middle">Ajouter un employé</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header card-header-info card-header-icon">
+                <div class="card-icon">
+                    <i class="material-icons">library_books</i>
+                </div>
+                <p class="card-category">Cours</p>
+                <h3 class="card-title">{{ nbrCours }}
+                    <small>cours</small>
+                </h3>
+            </div>
+            <div class="card-footer">
+                <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                    <i class="material-icons text-warning align-middle mr-3">list</i>
+                    <a [routerLink]="['cours/liste']" routerLinkActive="router-link-active" class="text-secondary align-middle">Liste des cours</a>
+                </div>
+                <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                    <i class="material-icons text-warning align-middle mr-3">person_add</i>
+                    <a [routerLink]="['cours/ajouter']" routerLinkActive="router-link-active" class="text-secondary align-middle">Ajouter un cours</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header card-header-secondary card-header-icon">
+                <div class="card-icon">
+                    <i class="material-icons">class</i>
+                </div>
+                <p class="card-category">Classe</p>
+                <h3 class="card-title">{{ nbrClasse }}</h3>
+            </div>
+            <div class="card-footer">
+                <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                    <i class="material-icons text-warning align-middle mr-3">list</i>
+                    <a [routerLink]="['classes/liste']" routerLinkActive="router-link-active" class="text-secondary align-middle">Liste des classes</a>
+                </div>
+                <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                    <i class="material-icons text-warning align-middle mr-3">person_add</i>
+                    <a [routerLink]="['classes/ajouter']" routerLinkActive="router-link-active" class="text-secondary align-middle">Ajouter une classe</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header card-header-primary card-header-icon">
+                <div class="card-icon">
+                    <i class="material-icons">details</i>
+                </div>
+                <p class="card-category">Matière</p>
+                <h3 class="card-title">{{ nbrMatiere }}</h3>
+            </div>
+            <div class="card-footer">
+                <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                    <i class="material-icons text-warning align-middle mr-3">list</i>
+                    <a [routerLink]="['matiere/liste']" routerLinkActive="router-link-active" class="text-secondary align-middle">Liste des matières</a>
+                </div>
+                <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                    <i class="material-icons text-warning align-middle mr-3">person_add</i>
+                    <a [routerLink]="['matiere/ajouter']" routerLinkActive="router-link-active" class="text-secondary align-middle">Ajouter une matière</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="../assets/js/core/jquery.min.js"></script>
+<script src="../assets/js/core/popper.min.js"></script>
+<script src="../assets/js/core/bootstrap-material-design.min.js"></script>
+<script src="https://unpkg.com/default-passive-events"></script>
+<script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<script src="../assets/js/plugins/chartist.min.js"></script>
+<script src="../assets/js/plugins/bootstrap-notify.js"></script>
+<script src="../assets/js/material-dashboard.js?v=2.1.0"></script>
+<script src="../assets/demo/demo.js"></script>
+<script src="../assets/js/sb-admin-2.min.js"></script>

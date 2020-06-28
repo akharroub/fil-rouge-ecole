@@ -1,0 +1,28 @@
+<nav class="pt-30 pb-30  lh-40 navigation_2 ">
+    <div class="container px-xl-0" id="test">
+        <div class="row align-items-center justify-content-between ">
+            <div class="col-xl-2 col-lg-3 text-center text-lg-left " data-aos-duration="500" data-aos="zoom-in" data-aos-delay="0">
+                <img [routerLink]="['/home']" alt="Logo" src="/assets/img/LOGO-7.png" class="pull-left">
+
+            </div>
+            <div class="col-xl-10 col-lg-9 d-flex flex-wrap align-items-center justify-content-center justify-content-md-between">
+
+                <div class="text-md-right" data-aos-duration="500" data-aos="zoom-in" data-aos-delay="500">
+
+                    <a class="mr-15 nav-link example_b  " [routerLink]="['/home']" routerLinkActive="router-link-active">Acceuil<span
+                            class="sr-only">(current)</span></a>
+
+                    <a class="mr-15 nav-link example_b" [routerLink]="['/institut']" routerLinkActive="router-link-active">Le centre</a>
+
+                    <a class="mr-15 nav-link example_b" [routerLink]="['/contact']" routerLinkActive="router-link-active">Contact</a>
+
+                    <a *ngIf="isConnected" class="mr-15 nav-link example_b" [routerLink]="['/centre']" routerLinkActive="router-link-active">Institut</a>
+                </div>
+                <div class="text-md-right" data-aos-duration="950" data-aos="zoom-in" data-aos-delay="950">
+                    <a *ngIf="!isConnected" class="mr-15 nav-link example_b" [routerLink]="['/login']" routerLinkActive="router-link-active">Connection</a>
+                    <a *ngIf="isConnected" class="mr-15 nav-link example_b " (click)='logout()'>Deconnection</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

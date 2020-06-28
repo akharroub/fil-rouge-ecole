@@ -1,0 +1,9 @@
+
+    <form (ngSubmit)="updateC()">
+        <div class="form-group">
+            <label for="leNom">Emtrer le nom de la nouvelle classe ici</label>
+            <input type="text" name="nom" class="form-control" value="{{UpClasse.nom}}"  [(ngModel)]=UpClasse.nom placeholder="entrer le nouveau nom de la classe">
+            <input type="text" name="nom" class="form-control"  value="{{UpClasse.id}}"  placeholder="saisire l'id de la classe a modifier" >
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>

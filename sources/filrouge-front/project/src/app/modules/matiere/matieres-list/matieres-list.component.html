@@ -1,0 +1,44 @@
+
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<link href="../assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+<link href="../assets/demo/demo.css" rel="stylesheet" />
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header card-header-primary">
+            <h4 class="card-title ">Liste des matieres</h4>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+<table class="table">
+    <thead class="table">
+
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Label</th>
+            <th scope="col">Editer</th>
+            <th scope="col">Supprimer</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let matiere of LesMatieres">
+        <tr>
+            <th scope="row">{{matiere.id}}</th>
+            <td>{{matiere.label}}</td>
+            <td [routerLink]="['/centre/matiere/update', matiere.id]" routerLinkActive="router-link-active"><img src="../../../../assets/img/edit-interface-symbol.svg" alt="editer" height="22px" width="25px" /></td>
+            <td (click)="supM(matiere.id)"><img src="../../../../assets/img/rubbish-bin.svg" alt="supprimer" height="22px" width="25px" /></td>
+        </tr>
+    </tbody>
+</table>
+
+<div>
+    <a class="nav-link" (click)="retour()" routerLinkActive="router-link-active"><i class="material-icons">arrow_back</i></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<button [routerLink]="['/centre/matiere/ajouter']" routerLinkActive="router-link-active" class="btn btn-primary" type="submit">Ajouter une Matiere</button>
+
